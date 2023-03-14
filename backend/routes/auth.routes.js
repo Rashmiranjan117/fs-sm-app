@@ -39,13 +39,13 @@ authRouter.post("/login", async (req, res) => {
 
   try {
     let user = await UserModel.find({ email, username });
+    console.log(user);
     if (user.length > 0) {
       bcrypt.compare(password, user[0].password, (err, result) => {
         if (result) {
           var token = jwt.sign(
-            { email, password, userId: user[0]._id, username },
-            process.env.privateKey,
-            { algorithm: "RS256" }
+            { email, password, userId: user[0]._id },
+            process.env.privateKey
           );
           res.send({ msg: "Login Successfull", token });
         } else {
