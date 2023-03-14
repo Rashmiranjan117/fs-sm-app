@@ -49,7 +49,7 @@ authRouter.post("/login", async (req, res) => {
           );
           res.send({ msg: "Login Successfull", token });
         } else {
-          res.send({ msg: "Invalid Credentials" });
+          res.send({ msg: "Invalid Credentials", err });
         }
       });
     }
