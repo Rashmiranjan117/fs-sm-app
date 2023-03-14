@@ -2,12 +2,7 @@ const mongoose = require("mongoose");
 
 const postSchema = mongoose.Schema({
   post: {
-    type: Buffer,
-    required: true,
-  },
-  mimeType: {
     type: String,
-    enum: ["image/jpeg", "image/png", "image/gif"],
     required: true,
   },
   caption: {

@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { connection } = require("./config/db");
+const { authenticate } = require("./middlewares/authenticate.middleware");
 const { userRouter } = require("./routes/user.routes");
 const { authRouter } = require("./routes/auth.routes");
 
@@ -16,6 +17,7 @@ app.use(
 );
 
 app.use("/auth", authRouter);
+app.use(authenticate);
 app.use("/user", userRouter);
 
 app.listen(process.env.port, async () => {
