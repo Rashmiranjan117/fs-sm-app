@@ -1,6 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import "./App.css";
+import "./sass/app.css";
 import AllRoutes from "./Routes/AllRoutes";
 import Navbar from "./Components/Navbar";
 

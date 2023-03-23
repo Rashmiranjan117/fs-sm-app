@@ -1,0 +1,70 @@
+$bcg:#8F43EE;
+@mixin gradientbcg{
+    background: $bcg;
+}
+
+.signup_container{
+    @include gradientbcg;
+    width: 100%;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.right{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    margin: auto;
+    height: 100%;
+    overflow: none;
+    & img{
+        border-radius: 15px;
+        max-width: 100%;
+        max-height: 100%;
+        box-sizing: border-box;
+        object-fit: contain;
+    }
+}
+
+.left{
+    padding:4rem;
+    border: 1px solid red;
+    & form{
+    background: red;
+    // margin:3rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
+    gap: 12px;
+    border: 10px solid black;
+    
+    width: 50%;
+    // height: 90%;
+    // box-sizing: border-box;
+    border-radius: 12px;
+    // margin: auto;
+    & input{
+        box-sizing: border-box;
+    }
+     & button{
+        background: $bcg;
+        color: white;
+        // width: 50%;
+        margin: auto;
+     }
+    }
+    & .heading{
+        text-align: center;
+        color: white;
+        margin: 1rem;
+    }
+    & p{
+        text-align: center;
+        & a{
+            color: blue;
+        }
+    }
+}
