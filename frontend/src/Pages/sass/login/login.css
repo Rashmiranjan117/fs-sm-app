@@ -27,31 +27,41 @@
 
 .left {
   padding: 4rem;
-  border: 1px solid red;
 }
-.left form {
-  background: red;
+.left > form {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   gap: 12px;
-  border: 10px solid black;
-  width: 50%;
+  width: 30rem;
+  max-width: 100%;
+  height: 90%;
+  box-sizing: border-box;
   border-radius: 12px;
+  margin: auto;
 }
-.left form input {
+.left > form > input {
   box-sizing: border-box;
 }
-.left form button {
+.left > form > button {
   background: #8F43EE;
   color: white;
   margin: auto;
 }
-.left .heading {
+.left > .heading {
   text-align: center;
   color: white;
   margin: 1rem;
 }
-.left p {
+.left > p {
   text-align: center;
 }
-.left p a {
+.left > p a {
   color: blue;
+}
+
+.below {
+  margin-top: 2rem;
 }/*# sourceMappingURL=login.css.map */

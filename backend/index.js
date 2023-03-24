@@ -6,10 +6,11 @@ const { connection } = require("./config/db");
 const { authenticate } = require("./middlewares/authenticate.middleware");
 const { userRouter } = require("./routes/user.routes");
 const { authRouter } = require("./routes/auth.routes");
-
+var cookieParser = require("cookie-parser");
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     origin: "*",

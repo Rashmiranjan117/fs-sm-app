@@ -13,7 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
+import Cookies from "universal-cookie";
 import imagesvg from "../assets/signupimage.svg";
 
 import "./sass/login/login.css";
@@ -41,6 +41,7 @@ const Signup = () => {
   const toast = useToast();
   const isErrorEmail: boolean = user.email === "";
   const isErrorPassword: boolean = user.password.length < 2;
+  const cookies = new Cookies();
   // const isErrorUsername: boolean = user.username === "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,12 +60,14 @@ const Signup = () => {
           duration: 5000,
           isClosable: true,
         });
+        let token = res.data.token;
+        cookies.set("auth", token);
         navigate("/");
-        
-        console.log(res.data)
+
+        console.log(res.data);
       })
       .catch((err) => {
-       return toast({
+        return toast({
           status: "error",
           title: "Something went wrong",
           duration: 5000,
@@ -116,10 +119,10 @@ const Signup = () => {
               onChange={(e) => handleChange(e)}
             />
           </FormControl>
-          <Text>
+          <Text className="below">
             Already have an account? <Link to="/signup">Signup</Link>
           </Text>
-          <Button type="submit">Signup</Button>
+          <Button type="submit">Login</Button>
         </form>
       </Box>
       <Box className="right">

@@ -5,14 +5,37 @@ import Feeds from "../Pages/Feeds";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import UserPosts from "../Pages/UserPosts";
+import { ProtectedRoute } from "./ProtectedRoute";
+
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/" element={<Feeds />} />
-      <Route path="/userposts" element={<UserPosts />} />
-      <Route path="/account" element={<Account />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Feeds />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/userposts"
+        element={
+          <ProtectedRoute>
+            <UserPosts />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/account"
+        element={
+          <ProtectedRoute>
+            <Account />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };

@@ -115,7 +115,7 @@ const Signup = () => {
               onChange={(e) => handleChange(e)}
             />
           </FormControl>
-          <Text>
+          <Text className="below">
             Already have an account? <Link to="/login">Login</Link>
           </Text>
           <Button type="submit">Signup</Button>
