@@ -44,6 +44,8 @@ exports.login = async (req, res) => {
           res.send({ msg: "Invalid Credentials", err });
         }
       });
+    } else {
+      res.send({ msg: "No user found. Register first." });
     }
   } catch (err) {
     res.send({ msg: "Login error", err });

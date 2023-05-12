@@ -1,11 +1,35 @@
 $commonColor : #6A19D6;
 .nav{
     width: 100%;
-    min-height: 100px;
-    background:white;
-    color: $commonColor;
-    display: flex;
-    justify-content: space-around;
+    min-height: 80px;
+    background:$commonColor;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid $commonColor;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    .left{
+        width: 100%;
+        & .black{
+            color: black !important;
+            border: 1px solid black;
+            padding: 4px;
+            border-radius: 5px;
+            margin: 4px;
+        }
+    }
+    .right{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 1rem;
+        & a:hover{
+            text-decoration: underline;
+        }
+    }
 }
