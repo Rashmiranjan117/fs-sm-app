@@ -8,7 +8,7 @@ export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const toast = useToast();
   const navigate = useNavigate()
   const token = cookie.get("auth");
-  console.log(token)
+  // console.log(token)
   if (!token) {
     // navigate('/login')
     toast({

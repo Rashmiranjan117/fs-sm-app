@@ -19,7 +19,7 @@ import imagesvg from "../assets/signupimage.svg";
 import "./sass/login/login.css";
 
 import { useNavigate } from "react-router";
-import axios, { AxiosPromise } from "axios";
+import axios, { AxiosPromise } from 'axios'
 
 interface signup {
   email: string;
@@ -53,7 +53,7 @@ const Signup = () => {
     e.preventDefault();
 
     loginUser(user)
-      .then((res) => {
+      .then((res: any) => {
         toast({
           status: "success",
           title: "Login Successfull",
@@ -66,7 +66,7 @@ const Signup = () => {
 
         console.log(res.data);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         return toast({
           status: "error",
           title: "Something went wrong",

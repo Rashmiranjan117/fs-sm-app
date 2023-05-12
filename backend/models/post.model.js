@@ -18,7 +18,7 @@ const postSchema = mongoose.Schema({
     default: [],
   },
   comments: {
-    type: [String],
+    type: [],
     default: [],
   },
   userId: String,
